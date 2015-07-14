@@ -170,6 +170,9 @@ bool LocalizableStringManager::ParseSourceFile( const BazisLib::String &fp )
 		lineNum++;
 		DynamicStringA line = pRdr->ReadLine();
 
+		if (line[0] == '#')
+			break;
+			
 		unsigned backslashCount = 0;
 		char prevChar = 0, ch = 0;
 
